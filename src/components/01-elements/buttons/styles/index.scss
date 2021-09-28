@@ -1,0 +1,121 @@
+@import 'src/styles/includes';
+
+.button {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  height: 50px;
+  padding: 0 40px;
+  border-radius: 25px;
+  outline: none;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 48px;
+  color: white;
+  background-image: none;
+  background-color: blue;
+  cursor: pointer;
+
+  &--cta {
+    border: solid 2px orange;
+    color: red;
+    background-color: orange;
+
+    &:hover {
+      border: solid 2px black;
+      color: var(--color-white);
+      background-color: orange;
+    }
+
+    &:focus {
+      text-decoration: underline;
+      color: #ffffff;
+      background-color: #000000;
+    }
+  }
+
+  &--large {
+    height: rem(62);
+    padding: 0 rem(40);
+    font-size: rem(18);
+    line-height: rem(62);
+  }
+
+  &--circle {
+    width: rem(50);
+    height: rem(50);
+    padding: 0;
+    border: solid 2px $color-primary;
+    line-height: rem(50);
+    color: #ffffff;
+    background-color: $color-primary;
+
+    &:hover {
+      border: solid 2px $color-text;
+      color: var(--color-white);
+      background-color: $color-text;
+    }
+
+    &:focus {
+      text-decoration: underline;
+      color: $color-text;
+      background-color: $color-text;
+    }
+  }
+
+  &--search {
+    border: solid 2px $color-primary;
+    color: $color-primary;
+    background-color: transparent;
+
+    &:hover {
+      border: solid 2px $color-bg;
+      color: $color-bg;
+
+      .icon {
+        fill: $color-bg;
+        stroke: $color-bg;
+      }
+    }
+
+    &:focus {
+      border: solid 2px $color-primary;
+      text-decoration: underline;
+      color: $color-title;
+    }
+
+    .icon {
+      display: inline-block;
+      width: 20px;
+      height: 18px;
+      margin-right: 5px;
+      line-height: 60px;
+      fill: $color-primary;
+      stroke: $color-primary;
+    }
+
+    &.active {
+      border: solid 2px $color-primary;
+      color: $color-primary;
+    }
+  }
+
+  &--arrow {
+    padding-right: 20px;
+    border: solid 2px $color-bg;
+    color: $color-bg;
+    background-size: 9px;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 50%;
+
+    &:focus {
+      border: solid 2px $color-bg;
+      text-decoration: underline;
+    }
+  }
+}

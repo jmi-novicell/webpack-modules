@@ -1,0 +1,6 @@
+- const styles = require("01-elements/buttons/styles/index.json");
+
+mixin buttons(props={label,type})
+  button(
+    class=`${styles.button} ${props.type ? styles[`button--${props.type}`] : ''}`
+  )= props.label

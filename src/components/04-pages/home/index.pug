@@ -1,6 +1,8 @@
 - const jumbotron = require("03-sections/jumbotron/index.pug");
 - const slider = require("03-sections/slider/index.pug");
+- const buttons = require("01-elements/buttons/index.pug");
 
 mixin home(props = {})
   != jumbotron({ props })
   != slider({ props })
+  != buttons(props ? { props } : { props: { label: "Regular button", type: "cta" } })

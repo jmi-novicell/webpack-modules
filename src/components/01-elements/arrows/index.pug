@@ -1,0 +1,4 @@
+- const styles = require("01-elements/arrows/styles/index.json");
+
+mixin arrows(props = {arrowUp: false})
+  i(class=`${styles.arrow} ${props.isUp ? styles.arrow_up : ''}`)
