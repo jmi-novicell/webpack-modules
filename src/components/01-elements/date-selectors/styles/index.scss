@@ -1,0 +1,21 @@
+.previousDay,
+.nextDay {
+  color: var(--color-black);
+  cursor: pointer;
+}
+
+.disable {
+  color: var(--color-gray-light);
+}
+
+.hide {
+  display: none;
+}
+
+.show:target {
+  display: none;
+}
+
+.show:target ~ .hide {
+  display: block;
+}
