@@ -1,0 +1,279 @@
+@import '../../../../styles/includes/_index.scss';
+
+.card {
+  height: 410px;
+
+  @include tablet {
+    height: 240px;
+  }
+
+  &__container {
+    position: relative;
+    display: block;
+    height: 100%;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    height: 100%;
+    color: $color-text;
+    cursor: pointer;
+
+    & .card__intro {
+      font-family: $font-name;
+      font-size: 14px;
+      color: darkslategrey;
+    }
+
+    & .dark-text {
+      color: darkslategrey;
+    }
+
+    & .item-full-width {
+      width: 100%;
+    }
+
+    & .card__content {
+      position: absolute;
+      bottom: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 90px;
+      background: rgba(81, 81, 82, 0.85);
+      transition: height 0.3s;
+
+      @include tablet {
+        height: 60px;
+      }
+
+      &.card__content-xl {
+        height: 120px;
+
+        @include tablet {
+          height: 150px;
+        }
+
+        .card__title-container {
+          top: 55px;
+
+          @include tablet {
+            top: 70px;
+          }
+        }
+
+        .card__title {
+          margin-bottom: 10px;
+        }
+      }
+
+      & .card__title-container {
+        position: absolute;
+        top: 55px;
+        margin: 0;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+
+        @include tablet {
+          top: 40px;
+        }
+
+        & .card__title {
+          padding: 0px 25px;
+          font-size: 22px;
+          line-height: 22px;
+          color: $color-text;
+
+          @include tablet {
+            padding: 0px 10px;
+            font-size: 16px;
+            line-height: 20px;
+          }
+
+          & .card__subtitle {
+            display: block;
+            font-family: $font-name;
+            font-weight: 400;
+            font-size: 16px;
+            color: $color-text;
+
+            @include tablet {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      & .card__description-container {
+        padding: 0px 25px;
+        margin-top: 90px;
+
+        @include tablet {
+          padding: 0px 10px;
+          margin-top: 60px;
+        }
+
+        &.card__description-container-xl {
+          margin-top: 120px;
+
+          @include tablet {
+            margin-top: 150px;
+          }
+        }
+
+        & .card__divider {
+          margin-bottom: 34px;
+          border-bottom: 1px solid $color-text;
+
+          @include tablet {
+            margin-bottom: 10px;
+          }
+        }
+
+        & .card__description {
+          font-family: $font-name;
+          font-size: 14px;
+          color: $color-text;
+
+          & .card-feature__description-title {
+            font-family: $font-name;
+
+            &::after {
+              content: ':';
+            }
+          }
+
+          & .card-feature__description-text--clickable {
+            z-index: 15;
+            text-decoration: underline;
+            cursor: pointer;
+          }
+
+          ul {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &--background {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.cards-slider {
+  .carousel-cell {
+    margin-right: 25px;
+  }
+
+  .carousel-cell:last-child {
+    margin-right: 25px;
+  }
+}
+
+section.cards-component {
+  .cards-component__heading {
+    margin-bottom: 30px;
+    text-align: center;
+
+    & h2 {
+      margin: 0;
+      font-size: 50px;
+      line-height: 55px;
+      color: $color-primary;
+
+      @include tablet {
+        font-size: 35px;
+        line-height: 42px;
+      }
+    }
+  }
+
+  .row {
+    justify-content: flex-start;
+    margin-right: -30px;
+    margin-left: -30px;
+
+    @include desktop {
+      margin-right: -25px;
+      margin-left: -25px;
+    }
+
+    &.center-cards {
+      justify-content: center;
+    }
+
+    & > .card__col.item-width-4 {
+      flex-basis: 33.3%;
+      max-width: 33.3%;
+      width: 33.3%;
+      padding: 0 15px 30px 15px;
+
+      @include desktop {
+        flex-basis: 50%;
+        max-width: 50%;
+        width: 50%;
+        padding: 0 10px 30px 10px;
+      }
+    }
+
+    & > .card__col.item-width-2 {
+      flex-basis: 50%;
+      max-width: 50%;
+      width: 50%;
+      padding: 0 15px 30px 15px;
+
+      @include desktop {
+        padding: 0 10px 30px 10px;
+      }
+    }
+  }
+
+  .cards-component__text-container {
+    max-width: 1030px;
+    padding: 0 15px;
+    margin: 0 auto;
+    margin-bottom: 45px;
+    color: $color-primary;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .flickity-viewport {
+    width: 100%;
+  }
+
+  .flickity-button {
+    @include fullhd {
+      display: none;
+    }
+  }
+
+  .cards-component__col {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .cards-component__bottom {
+    margin-top: 20px;
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+    }
+
+    &__link {
+      font-weight: 900;
+      font-size: 18px;
+
+      @include tablet {
+        font-size: 16px;
+      }
+    }
+  }
+}

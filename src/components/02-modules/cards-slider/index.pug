@@ -1,0 +1,34 @@
+- const data = require("02-modules/cards-slider/data/cards.json");
+- const styles = require("02-modules/cards-slider/styles/index.json");
+
+mixin cardsSlider(props={})
+  section.section.cards-component
+    .container 
+      .row
+        .col-xs-12.cards-component__heading
+          h2.heading.margin--b-5= props.label
+        .col-xs-12
+          .cards-component__text-container.padding--tb-50 Text por aquí
+      .row
+        .cards-slider.main-carousel.between-ms.vender-js
+          .carousel-cell.item-width-2.card__col
+            each card in (props ? props.cards : data.cards)
+              article(
+                class=`${styles.card} ${styles['card--background']}`
+                style=`background-image: url('${card.bgimage}')`
+              )
+                a(class=`${styles.card__link}` href='#')
+                  div(class=`${styles.card__content} hover-expand`)
+                    div(class=`${styles['card__title-container']}`)
+                      h6(class=`${styles.card__title} heading`)= card.title
+                    div(class=`${styles['card__description-container']}`)
+                      div(class=`${styles.card__divider}`)
+                      div(class=`${styles.card__description}`)= card.description
+      .row
+        div(class=`${styles['cards-component__col']} col-xs-12`)
+          div(class=`${styles['cards-component__bottom']}`)
+            a(
+              class=`${styles['cards-component__bottom__link']} link link-icon`
+              href='#'
+              target='_blank'
+            ) Aquí entiendo que debe aparecer algo
