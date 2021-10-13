@@ -248,12 +248,6 @@ section.cards-component {
     width: 100%;
   }
 
-  .flickity-button {
-    @include fullhd {
-      display: none;
-    }
-  }
-
   .cards-component__col {
     padding-right: 0;
     padding-left: 0;
